@@ -1,0 +1,64 @@
+{
+  "exchange_rate": [
+    {
+      "date": "2019-09-07",
+      "details": [
+        {
+          "bank_id": 1,
+          "purchase_price": "32.8352",
+          "sale_price": "33.8425"
+        },
+        {
+          "bank_id": 2,
+          "purchase_price": "32.8352",
+          "sale_price": "33.8425"
+        },
+        {
+          "bank_id": 3,
+          "purchase_price": "32.8352",
+          "sale_price": "33.8425"
+        },
+        {
+          "bank_id": 4,
+          "purchase_price": "32.8352",
+          "sale_price": "33.8425"
+        },
+        {
+          "bank_id": 5,
+          "purchase_price": "32.8352",
+          "sale_price": "33.8425"
+        }
+      ]
+    },
+    {
+      "date": "2019-09-08",
+      "details": [
+        {
+          "bank_id": 1,
+          "purchase_price": "32.8362",
+          "sale_price": "33.8465"
+        },
+        {
+          "bank_id": 2,
+          "purchase_price": "32.8362",
+          "sale_price": "33.8465"
+        },
+        {
+          "bank_id": 3,
+          "purchase_price": "32.8362",
+          "sale_price": "33.8465"
+        },
+        {
+          "bank_id": 4,
+          "purchase_price": "32.8352",
+          "sale_price": "33.8425"
+        },
+        {
+          "bank_id": 5,
+          "purchase_price": "32.8362",
+          "sale_price": "33.8465"
+        }
+      ]
+    }
+  ]
+}

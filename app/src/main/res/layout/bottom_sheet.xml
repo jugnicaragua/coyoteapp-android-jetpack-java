@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/back_border"
+    android:orientation="vertical"
+    android:padding="16dp"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="300dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="64dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/see_more_bg" />
+
+    </LinearLayout>
+    <!--
+    <LinearLayout
+        android:weightSum="6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/etCalc"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_marginTop="4dp"
+            android:inputType="numberDecimal"
+            android:layout_height="wrap_content"></EditText>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_calc"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+    -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcViewbanks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:spanCount="2"
+        app:behavior_overlapTop="30dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />
+
+    <!--        app:setAdapter="@{model.getRecyclerPodCastsAdapter}"-->
+
+
+
+
+</LinearLayout>

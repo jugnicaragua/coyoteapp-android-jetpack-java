@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CoyoteApp</string>
+
+    <string name="title_activity_main_dashboard">MainDashboard</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

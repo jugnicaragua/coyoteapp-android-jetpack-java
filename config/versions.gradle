@@ -1,0 +1,38 @@
+// archivo para definir las librerías y las versiones de las librerías
+// que utlizaremos en nuestro proyecto
+ext.deps = [:]
+
+def versions = [:]
+versions.android_gradle_plugin = '3.5.0'
+versions.test_runner = '1.2.0'
+versions.androidx_compat = '1.1.0'
+versions.junit = '4.12'
+versions.espresso_core = '3.2.0'
+versions.constraintlayout = '1.1.3'
+versions.support_design = '28.0.0'
+versions.lifecycle = '2.1.0'
+versions.room = '2.2.0-rc01'
+versions.work_manager = '2.2.0'
+
+def dependencies = [:]
+
+//Others
+dependencies.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+dependencies.androidx_appcompat = "androidx.appcompat:appcompat:$versions.androidx_compat"
+// Testing Libraries
+dependencies.junits = "junit:junit:$versions.junit"
+dependencies.test_runner = "androidx.test:runner:$versions.test_runner"
+dependencies.espresso_core = "androidx.test.espresso:espresso-core:$versions.espresso_core"
+// ConstraintLayout and Support Design
+dependencies.constraint_layout = "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
+dependencies.support_design = "com.android.support:design:$versions.support_design"
+
+// ViewModel and LiveData
+dependencies.viewmodel_and_livedata="androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+// Room database
+dependencies.room="androidx.room:room-runtime:$versions.room"
+dependencies.room_compiler="androidx.room:room-compiler:$versions.room"
+// WorkManager
+dependencies.work_manager="androidx.work:work-runtime:$versions.work_manager"
+
+ext.deps = dependencies
