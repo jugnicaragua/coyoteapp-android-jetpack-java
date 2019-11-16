@@ -2,7 +2,6 @@ package ni.org.jug.coyoteapp.model.dto;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Date;
 import java.util.List;
 
 /**

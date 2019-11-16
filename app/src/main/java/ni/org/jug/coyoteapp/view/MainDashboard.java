@@ -4,19 +4,24 @@ import android.annotation.SuppressLint;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.MotionEvent;
+import android.view.MenuItem;
 import android.view.View;
 
 import ni.org.jug.coyoteapp.R;
+import ni.org.jug.coyoteapp.databinding.ActivityMainDashboardBinding;
+import ni.org.jug.coyoteapp.viewmodel.MainViewModel;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class MainDashboard extends AppCompatActivity {
+public class MainDashboard extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     /**
      * Some older devices needs a small delay between UI widget updates
@@ -60,8 +65,16 @@ public class MainDashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main_dashboard);
+        ActivityMainDashboardBinding dataBinding = DataBindingUtil.setContentView(this, R.layout.activity_main_dashboard);
+
+        MainViewModel model = ViewModelProviders.of(this).get(MainViewModel.class);
+
+        dataBinding.setModel(model);
+
+        //setContentView(R.layout.activity_main_dashboard);
         mContentView = findViewById(R.id.fullscreen_content);
+
+
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,5 +116,31 @@ public class MainDashboard extends AppCompatActivity {
     private void delayedHide(int delayMillis) {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
+    }
+
+    public void showPopupMenu(View view){
+        PopupMenu popup = new PopupMenu(this, view);
+
+        // This activity implements OnMenuItemClickListener
+        popup.setOnMenuItemClickListener(this);
+
+        popup.inflate(R.menu.popup_menu);
+        popup.show();
+        hide();
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.converter:
+                // show popup with UI
+                return true;
+            case R.id.filters:
+                // show a filter activity
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

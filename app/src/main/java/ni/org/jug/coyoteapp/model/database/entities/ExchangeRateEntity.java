@@ -23,4 +23,44 @@ public class ExchangeRateEntity {
 
     @ColumnInfo(name = "date")
     public String date;
+
+    public int getExchangeRateId() {
+        return exchangeRateId;
+    }
+
+    public void setExchangeRateId(int exchangeRateId) {
+        this.exchangeRateId = exchangeRateId;
+    }
+
+    public Integer getBankId() {
+        return bankId;
+    }
+
+    public void setBankId(Integer bankId) {
+        this.bankId = bankId;
+    }
+
+    public String getPurchasePrice() {
+        return purchasePrice;
+    }
+
+    public void setPurchasePrice(String purchasePrice) {
+        this.purchasePrice = purchasePrice;
+    }
+
+    public String getSalePrice() {
+        return salePrice;
+    }
+
+    public void setSalePrice(String salePrice) {
+        this.salePrice = salePrice;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 }

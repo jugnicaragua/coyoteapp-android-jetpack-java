@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewmodel"
+            type="ni.org.jug.coyoteapp.viewmodel.MainViewModel" />
+    </data>
+<LinearLayout
     android:id="@+id/bottom_sheet"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -58,23 +64,23 @@
             android:layout_width="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@drawable/ic_bac"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@drawable/ic_lafise"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@drawable/ic_banpro"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@drawable/ic_bdf"/>
 
 
     </LinearLayout>
@@ -87,11 +93,11 @@
         app:behavior_overlapTop="30dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:setAdapter="@{viewmodel.getRecyclerAdapter}"
         />
 
     <!--        app:setAdapter="@{model.getRecyclerPodCastsAdapter}"-->
 
 
-
-
 </LinearLayout>
+</layout>

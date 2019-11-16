@@ -44,14 +44,20 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation deps.androidx_appcompat
+
+    implementation deps.androidx_legacy
+    implementation deps.gson
+    implementation deps.retrofit
+    implementation deps.gson_converter
+
     implementation deps.constraint_layout
 
     implementation deps.viewmodel_and_livedata
     implementation deps.room
-    implementation deps.room_compiler
+    annotationProcessor deps.room_compiler
     /* implementation deps.work_manager */
 
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
     testImplementation deps.junits
     androidTestImplementation deps.test_runner
     androidTestImplementation deps.espresso_core

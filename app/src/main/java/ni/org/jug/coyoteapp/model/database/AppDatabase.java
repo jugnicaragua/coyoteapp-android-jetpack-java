@@ -15,6 +15,7 @@ import ni.org.jug.coyoteapp.model.database.entities.ExchangeRateEntity;
  */
 @Database(entities = {ExchangeRateEntity.class},version = 1)
 public abstract class AppDatabase extends RoomDatabase {
+
     public abstract ExchangeRateDao exchangeRateDao();
 
     private static volatile AppDatabase INSTANCE;

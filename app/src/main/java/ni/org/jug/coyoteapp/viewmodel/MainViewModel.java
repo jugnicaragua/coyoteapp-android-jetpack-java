@@ -5,7 +5,9 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 
-import ni.org.jug.coyoteapp.model.ExchangeObservable;
+import ni.org.jug.coyoteapp.R;
+import ni.org.jug.coyoteapp.model.Repository;
+import ni.org.jug.coyoteapp.model.RepositoryImpl;
 import ni.org.jug.coyoteapp.view.RvAdapter;
 
 /**
@@ -13,12 +15,16 @@ import ni.org.jug.coyoteapp.view.RvAdapter;
  */
 public class MainViewModel extends AndroidViewModel {
 
-    private ExchangeObservable exchangeObservable = new ExchangeObservable();
+    private Repository exchangeRepository = null;
     private RvAdapter recyclerAdapter = null;
 
     public MainViewModel(@NonNull Application application) {
         super(application);
-        exchangeObservable.callExchangeRateToday();
-        recyclerAdapter = new RvAdapter();
+        exchangeRepository = new RepositoryImpl( getApplication() );
+        recyclerAdapter = new RvAdapter(this, R.layout.card_view);
+    }
+
+    public RvAdapter getRecyclerAdapter(){
+        return recyclerAdapter;
     }
 }
