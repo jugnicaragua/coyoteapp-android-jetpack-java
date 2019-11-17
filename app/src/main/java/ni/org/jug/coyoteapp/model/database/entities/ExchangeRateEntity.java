@@ -10,7 +10,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "exchange_rate")
 public class ExchangeRateEntity {
     @PrimaryKey
-    private int exchangeRateId;
+    private Long exchangeRateId;
 
     @ColumnInfo(name = "bank_id")
     private Integer bankId;
@@ -24,11 +24,11 @@ public class ExchangeRateEntity {
     @ColumnInfo(name = "date")
     public String date;
 
-    public int getExchangeRateId() {
+    public Long getExchangeRateId() {
         return exchangeRateId;
     }
 
-    public void setExchangeRateId(int exchangeRateId) {
+    public void setExchangeRateId(Long exchangeRateId) {
         this.exchangeRateId = exchangeRateId;
     }
 

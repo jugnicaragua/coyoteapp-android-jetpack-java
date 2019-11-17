@@ -45,7 +45,6 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ExchangeRateHolder
         private ViewDataBinding binding = null;
 
         public ExchangeRateHolder(@NonNull View itemView) {
-            //this.binding = binding;
             super(itemView);
         }
 

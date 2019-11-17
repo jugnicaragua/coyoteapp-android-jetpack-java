@@ -11,4 +11,7 @@ public interface ApiClient {
 
     @GET("/exchange_today")
     Call<ExchangeRateDTO> getExchangeToday();
+
+
+
 }

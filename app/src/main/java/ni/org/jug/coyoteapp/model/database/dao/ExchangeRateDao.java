@@ -1,7 +1,6 @@
 package ni.org.jug.coyoteapp.model.database.dao;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.room.Dao;
 import androidx.room.Query;
 
