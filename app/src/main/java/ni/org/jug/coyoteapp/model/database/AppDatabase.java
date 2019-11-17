@@ -13,7 +13,7 @@ import ni.org.jug.coyoteapp.model.database.entities.ExchangeRateEntity;
 /**
  * Created by WebnMobile on 2019-09-11.
  */
-@Database(entities = {ExchangeRateEntity.class},version = 1)
+@Database(entities = {ExchangeRateEntity.class},version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract ExchangeRateDao exchangeRateDao();

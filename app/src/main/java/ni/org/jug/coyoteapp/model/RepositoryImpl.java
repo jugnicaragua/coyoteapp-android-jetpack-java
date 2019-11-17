@@ -2,6 +2,7 @@ package ni.org.jug.coyoteapp.model;
 
 import android.app.Application;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import java.util.List;
@@ -22,7 +23,7 @@ import retrofit2.Response;
 public class RepositoryImpl implements Repository {
 
     private ExchangeRateDao exchangeRateDao;
-    private MutableLiveData<ExchangeRateEntity> exchangeRateToday;
+    private LiveData<List<ExchangeRateEntity>> exchangeRateToday;
 
     public RepositoryImpl(Application application) {
         AppDatabase db = AppDatabase.getDatabase(application);
@@ -32,7 +33,7 @@ public class RepositoryImpl implements Repository {
     }
 
     @Override
-    public MutableLiveData<ExchangeRateEntity> getExchangeRateToday() {
+    public LiveData<List<ExchangeRateEntity>> getExchangeRateToday() {
         exchangeRateToday = exchangeRateDao.getExchangeRateToday("2019-09-19");
 
         if (exchangeRateToday == null){

@@ -16,7 +16,7 @@ import ni.org.jug.coyoteapp.model.database.entities.ExchangeRateEntity;
 public interface ExchangeRateDao {
 
     @Query("SELECT * FROM exchange_rate WHERE date =:today")
-    MutableLiveData<ExchangeRateEntity> getExchangeRateToday(String today);
+    LiveData<List<ExchangeRateEntity> > getExchangeRateToday(String today);
 
     @Query("SELECT * FROM exchange_rate WHERE date BETWEEN :iniDate AND :endDate")
     LiveData<List<ExchangeRateEntity>> loadAllByIds(String iniDate, String endDate);
